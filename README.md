@@ -3,11 +3,20 @@
 A standalone, static landing page presenting the DevOps implementation of the
 [Containerized Event Sponsorship Tracker](https://github.com/PRASHIRAWAL/event-sponsorship-tracker).
 
-Built with React and Vite. All content is static: no backend, API, or database is required.
+Built with React and Vite, with no other runtime dependencies. All content is static: no backend, API, or database is required.
+Figures match Jenkins build #13 (18 Oct 2026, v2 release on `main`).
 
 ## Sections
-Hero · Project overview & objectives · DevOps architecture · Technology stack ·
-Nine-stage CI/CD workflow · Verified results · Application features · Timeline · Lessons learned
+Hero with a replay of build #13 · Toolchain marquee · Overview & objectives · Animated architecture diagram ·
+Interactive 8-stage pipeline with real console output · Build history chart (#3–#13) and Jenkins screenshots ·
+Testing (142 unit/integration + 14 Selenium, per class) · Docker images, deployment and Ansible ·
+App screenshots (light/dark) · v2 features and code stats · Timeline · Lessons learned
+
+Animations respect `prefers-reduced-motion`.
+
+## Screenshots
+`public/screens/` holds WebP screenshots of the v2 app, taken from its `dev` profile with demo data,
+and of the Jenkins job, the build #13 test report and the build #13 console.
 
 ## Run locally
 ```bash

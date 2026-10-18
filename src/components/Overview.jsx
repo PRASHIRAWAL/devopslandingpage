@@ -1,22 +1,34 @@
 import Section from './Section.jsx';
-import { objectives } from '../data.js';
+import Icon from './Icon.jsx';
+import { objectives, problem } from '../data.js';
 
 export default function Overview() {
   return (
     <Section
       id="overview"
-      eyebrow="Project overview"
-      title="From sponsorship spreadsheets to a delivered product"
-      intro="Colleges and organisers often track sponsors across spreadsheets and email threads. The Event Sponsorship Tracker centralises events, sponsors, sponsorship status and payments in one web application — and the DevOps work makes every change to it built, tested, containerised and verified automatically."
+      eyebrow="Overview"
+      title="One app, one pipeline, every change verified"
+      intro="The product is a sponsorship tracker for college events. The project is everything around it: version control, CI, testing, containers, a registry, deployment and configuration management."
     >
-      <div className="grid grid--3">
-        {objectives.map((o, i) => (
-          <article key={o.title} className="card">
-            <span className="card__index" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
-            <h3>{o.title}</h3>
-            <p>{o.text}</p>
-          </article>
-        ))}
+      <div className="overview">
+        <div className="overview__problem card card--glow" data-reveal>
+          <h3>{problem.title}</h3>
+          <p>{problem.text}</p>
+          <ul className="ticks">
+            {problem.points.map((p) => (
+              <li key={p}><Icon name="check" size={16} />{p}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="grid grid--3 overview__goals">
+          {objectives.map((o, i) => (
+            <article key={o.title} className="card objective" data-reveal style={{ '--delay': `${i * 70}ms` }}>
+              <span className="icon-tile"><Icon name={o.icon} /></span>
+              <h3>{o.title}</h3>
+              <p>{o.text}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </Section>
   );

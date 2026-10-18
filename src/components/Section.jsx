@@ -1,10 +1,10 @@
 // Shared wrapper giving every section a heading, an eyebrow label and a consistent layout.
-export default function Section({ id, eyebrow, title, intro, tone = 'light', children }) {
+export default function Section({ id, eyebrow, title, intro, tone = 'plain', children }) {
   const headingId = `${id}-title`;
   return (
     <section id={id} className={`section section--${tone}`} aria-labelledby={headingId}>
       <div className="container">
-        <header className="section__header">
+        <header className="section__header" data-reveal>
           {eyebrow && <p className="eyebrow">{eyebrow}</p>}
           <h2 id={headingId}>{title}</h2>
           {intro && <p className="section__intro">{intro}</p>}
